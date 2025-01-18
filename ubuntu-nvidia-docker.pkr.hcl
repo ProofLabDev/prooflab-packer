@@ -85,7 +85,10 @@ build {
       "echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> /home/ubuntu/.bashrc",
       
       # Source .bashrc to make variables available immediately
-      ". /home/ubuntu/.bashrc"
+      ". /home/ubuntu/.bashrc",
+
+      # Retart docker
+      "sudo systemctl restart docker"
     ]
     execute_command = "bash -c '{{ .Vars }} {{ .Path }}'"
   }
